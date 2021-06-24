@@ -48,12 +48,13 @@ namespace DogGo.Repositories
                         Walks walk = new Walks
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                            Date = reader.GetDateTime(reader.GetOrdinal("Date")),
+                            Date = reader.GetDateTime(reader.GetOrdinal("Date")).ToString("MM/dd/yyyy"),
                             Duration = reader.GetInt32(reader.GetOrdinal("Duration")),
                             WalkerId = reader.GetInt32(reader.GetOrdinal("WalkerId")),
                             DogId = reader.GetInt32(reader.GetOrdinal("DogId")),
                             ClientName = reader.GetString(reader.GetOrdinal("ClientName"))
                         };
+                        
                         walks.Add(walk);
                     }
                     reader.Close();
