@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DogGo.Controllers
@@ -14,21 +15,33 @@ namespace DogGo.Controllers
     {
         private readonly IWalkerRepository _walkerRepo;
         private readonly IWalksRepository _walksRepo;
+        private readonly IOwnerRepository _ownerRepo;
 
         // ASP.NET will give us an instance of our Walker Repository. This is called "Dependency Injection"
         public WalkersController(IWalkerRepository walkerRepository,
-                                 IWalksRepository walksRepository)
+                                 IWalksRepository walksRepository,
+                                 IOwnerRepository ownerRepository)
         {
             _walkerRepo = walkerRepository;
             _walksRepo = walksRepository;
+            _ownerRepo = ownerRepository;
         }
 
         // GET: Walkers
         public ActionResult Index()
         {
-            List<Walker> walkers = _walkerRepo.GetAllWalkers();
+            int userId = GetCurrentUserId();
+            if (userId != 0)
+            {
+                Owner owner = _ownerRepo.GetOwnerById(userId);
 
-            return View(walkers);
+                List<Walker> walkersInTheHood = _walkerRepo.GetWalkersInNeighborhood(owner.NeighborhoodId);
+
+                return View(walkersInTheHood);
+            }
+
+            List<Walker> allWalkers = _walkerRepo.GetAllWalkers();
+            return View(allWalkers);
         }
 
         // GET: WalkersController/Details/5
@@ -111,5 +124,19 @@ namespace DogGo.Controllers
                 return View();
             }
         }
+
+        private int GetCurrentUserId()
+        {
+            string id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (id != null)
+            {
+                return int.Parse(id);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
     }
 }

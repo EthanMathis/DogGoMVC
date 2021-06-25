@@ -143,6 +143,8 @@ namespace DogGo.Repositories
 
                     cmd.Parameters.AddWithValue("@name", dog.Name);
                     cmd.Parameters.AddWithValue("@breed", dog.Breed);
+                    cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
+                    cmd.Parameters.AddWithValue("@id", dog.Id);
                     if (dog.Notes == null)
                     {
                         cmd.Parameters.AddWithValue("@notes", DBNull.Value);
@@ -160,8 +162,6 @@ namespace DogGo.Repositories
                     {
                         cmd.Parameters.AddWithValue("@imageUrl", dog.ImageUrl);
                     }
-                    cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
-                    cmd.Parameters.AddWithValue("@id", dog.Id);
 
                     cmd.ExecuteNonQuery();
                 }
