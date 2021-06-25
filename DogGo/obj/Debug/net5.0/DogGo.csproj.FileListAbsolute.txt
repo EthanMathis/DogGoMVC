@@ -425,9 +425,12 @@ C:\Users\ethan\workspace\DogGo\DogGo\bin\Debug\net5.0\runtimes\win\lib\netstanda
 C:\Users\ethan\workspace\DogGo\DogGo\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Walkers\Index.cshtml.g.cs
 C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Walkers\Details.cshtml.g.cs
-C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Index.cshtml.g.cs
-C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Details.cshtml.g.cs
+C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Create.cshtml.g.cs
+C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Delete.cshtml.g.cs
+C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Index.cshtml.g.cs
 C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Create.cshtml.g.cs
 C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Delete.cshtml.g.cs
+C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Details.cshtml.g.cs
 C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Edit.cshtml.g.cs
-C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Dog\Index.cshtml.g.cs
+C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Index.cshtml.g.cs
+C:\Users\ethan\workspace\DogGo\DogGo\obj\Debug\net5.0\Razor\Views\Owner\Login.cshtml.g.cs
